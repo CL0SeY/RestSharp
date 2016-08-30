@@ -5,7 +5,7 @@ after_build:
 - ps: ./pack.ps1 -configuration Release
 skip_tags: true
 artifacts:
-  - path: RestSharp\bin\Release
+  - path: RestSharp\bin\Release\*.nupkg
 build:
   project: RestSharp.NetCore.sln
   verbosity: minimal

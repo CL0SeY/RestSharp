@@ -4,7 +4,7 @@ before_build:
 after_build:
 - ps: pack.ps1
 skip_tags: true
-atifacts:
+artifacts:
   - path: RestSharp\bin\$(configuration)
 build:
   project: RestSharp.NetCore.sln

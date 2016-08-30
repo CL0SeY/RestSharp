@@ -1,2 +1,7 @@
+Param(
+    [string]$configuration
+)
+
 Push-Location RestSharp
-dotnet pack
+dotnet pack -c $configuration
+Pop-Location

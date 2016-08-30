@@ -2,7 +2,7 @@ version: 105.2.4.{build}
 before_build:
 - nuget restore RestSharp.NetCore.sln
 after_build:
-- ps: ./pack.ps1
+- ps: ./pack.ps1 -configuration $(configuration)
 skip_tags: true
 artifacts:
   - path: RestSharp\bin\$(configuration)

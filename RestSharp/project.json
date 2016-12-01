@@ -1,7 +1,7 @@
 {
   "title": "RestSharp for .NET Core",
   "description": "RestSharp for .NET Core",
-  "version": "105.2.4-rc2-24214-01-beta2",
+  "version": "105.2.4-rc4-24214-02",
   "dependencies": {
     "NETStandard.Library": "1.6.0",
     "System.Collections.Specialized": "4.3.0",

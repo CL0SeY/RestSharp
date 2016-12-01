@@ -279,7 +279,7 @@ namespace RestSharp
 
         private void SetTimeout(IAsyncResult asyncResult, TimeOutState timeOutState)
         {
-#if FRAMEWORK
+#if FRAMEWORK || NETCORE50 || NETSTANDARD1_5 || NETSTANDARD1_6
             if (this.Timeout != 0)
             {
                 ThreadPool.RegisterWaitForSingleObject(asyncResult.AsyncWaitHandle,
@@ -457,6 +457,13 @@ namespace RestSharp
             }
 #endif
 
+#if FRAMEWORK || NETCORE50 || NETSTANDARD1_5 || NETSTANDARD1_6
+            if (this.Proxy != null)
+            {
+                webRequest.Proxy = this.Proxy;
+            }
+#endif
+
 #if FRAMEWORK
             if (this.ClientCertificates != null)
             {
@@ -475,11 +482,6 @@ namespace RestSharp
             if (this.ReadWriteTimeout != 0)
             {
                 webRequest.ReadWriteTimeout = this.ReadWriteTimeout;
-            }
-
-            if (this.Proxy != null)
-            {
-                webRequest.Proxy = this.Proxy;
             }
 
             if (this.CachePolicy != null)
